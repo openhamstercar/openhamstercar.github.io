@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Funktion</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #1e293b;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23cbd5e1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            font-family: "Sour Gummy", "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-variation-settings: "wdth" 100;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+
+        .scrollbar::-webkit-scrollbar {
+            width: 20px;
+            height: 20px;
+        }
+
+        .scrollbar::-webkit-scrollbar-track {
+            border-radius: 100vh;
+            background: #f7f4ed;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb {
+            background: #e0cbcb;
+            border-radius: 100vh;
+            border: 3px solid #f6f7ed;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #c0a0b9;
+        }
+    </style>
+</head>
+<body class="text-slate-200 w-full flex justify-center flex-wrap font-sans" style="font-family: 'Roboto', sans-serif;">
+<main class="w-full flex justify-center flex-col flex-nowrap space-y-12 pb-12 px-2 max-w-screen-sm">
+    <div class="w-full text-center mt-32 mb-16 space-y-4">
+        <h1 class="text-slate-100 text-5xl font-semibold">Funktion</h1>
+        <h3 class="text-slate-300 text-xl font-medium">The fun game-theory based competition</h3>
+    </div>
+
+    <div class="text-slate-100 space-x-4 flex">
+        <a href="banano.html">
+            <button type="button" class="p-1 px-3 flex gap-x-2 cursor-pointer font-semibold rounded-full border border-slate-100 text-slate-800 bg-slate-100 hover:border-slate-900 hover:bg-slate-900 hover:text-slate-100">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 135"><path d="M184.1 133.9C103.5 144 66.3 72.9 73 65.9c4.4-4.6 11.1-4.9 17-5 27-.8 65.1 30.8 72.9 30.6 15-.3 37.5-24.2 52.3-43.9 6.2-8.2 44.9-20.6 40.6 1-14 70.2-61.3 84-71.6 85.3ZM72 .9C152.5-9 189.7 62 183 69c-4.4 4.7-11.1 5-17 5-27 .8-65.1-30.8-72.9-30.6-15 .3-37.5 24.2-52.3 43.9-6.2 8.2-44.9 20.7-40.6-1C14.3 16 61.6 2.2 72 1Z"/></svg>
+                Banano
+            </button>
+        </a>
+    </div>
+
+    <div class="p-4 rounded border bg-slate-800 space-y-4">
+        <div class="border-b pb-2">
+            <h4 class="text-slate-100 text-2xl font-bold mb-1">Today</h4>
+            <div class="text-sm font-medium"><span id="today-datetime-window-start"></span> - <span id="today-datetime-window-end"></span></div>
+        </div>
+
+        <div class="border border-slate-700 rounded">
+            <div class="text-slate-100 bg-slate-700 p-2 font-semibold">Entry address</div>
+            <div class="p-2 space-y-3">
+                <div class="space-y-3">
+                    <div class="text-sm">Transfer BAN to this address to enter:</div>
+                    <div class="break-all p-2 bg-slate-900 rounded font-mono"><span class="copy-object select-all hot-address" title="placeholder">placeholder</span> <span class="cursor-pointer pl-1 copy-button" title="Copy">&#10063;</span></div>
+                </div>
+                <div class="italic text-xs">All entries are rounded to the nearest whole number using <a href="https://en.wikipedia.org/wiki/Rounding" target="_blank"><span class="underline hover:no-underline cursor-pointer">bankers' rounding</span></a>. NB: 1 BAN = 1 BAN.</div>
+            </div>
+        </div>
+
+        <div class="border border-slate-700 rounded">
+            <div class="text-slate-100 bg-slate-700 p-2 font-semibold">Today's function</div>
+            <div id="today-function-loading" class="p-2 space-y-2 flex text-sm">Loading...</div>
+            <div id="today-function-container" class="p-2 space-y-3 hidden">
+                <div id="today-function-html">Function here</div>
+                <div id="today-function-txt" class="italic text-xs">Text description of function</div>
+                <div class="p-2 bg-slate-900 rounded text-xs">
+                    <pre onclick="showHideElement('py-formula-today');" class="cursor-pointer">View python formula <button type="button">&#8628;</button></pre>
+                    <div id="py-formula-today" class="hidden space-y-2 pt-2 mt-2 border-t border-slate-700 flex-wrap">
+                        <pre class="w-full">def winning_number(entries):<br>&#9;"""<br>&#9;entries : list<br>&#9;&#9;Entry values, e.g. [1, 2, 3]<br>&#9;"""<br>&#9;return <span id="today-function-python">sum(entries) / len(entries)</span></pre>
+                        <pre onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">View full script</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full text-center py-2"><span class="pr-3">&#9679;</span><span id="game-end-countdown" class="font-medium italic text-lg">6h 24m 04s</span> to go until close at <span id="today-datetime-window-end-counter-txt">2024-11-07 23:59:59 UTC</span><span class="pl-3">&#9679;</span></div>
+
+        <div class="border border-slate-700 rounded">
+            <div class="text-slate-100 bg-slate-700 p-2 font-semibold flex justify-between">
+                <div>Last 10 entries</div>
+                <button onclick="updateRecentTransactions('entries-container');" type="button" class="text-sm px-2 border border-slate-800 bg-slate-800 rounded font-medium">Load entries</button>
+            </div>
+            <div id="entries-container" class="hidden flex-col p-2 space-y-2">
+                <div id="recent-entries" class="space-x-1 flex w-full overflow-x-scroll pb-2">
+                </div>
+                <div class="italic text-xs" id="recent-entries-updated-on"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4 rounded border bg-slate-800 space-y-4">
+        <div class="border-b pb-2">
+            <h4 class="text-slate-100 text-2xl font-bold mb-1">How it works</h4>
+            <div class="text-sm font-medium">A fun, potassium-rich maths game</div>
+        </div>
+        <div class="space-y-3">
+            <div>Do you have skills of mathematical deduction and telepathy?</div>
+            <div>Each day there is a function (e.g. arithmetic mean divided by two) which is applied to all entries that day to determine a winner.</div>
+        </div>
+        <ol class="rounded space-y-4">
+            <li class="border border-slate-700 rounded flex">
+                <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">1. </div>
+                <div class="p-2">Enter by transferring BAN to the game address (<span class="break-all copy-object text-sm hot-address" title="placeholder">placeholder</span> <span class="cursor-pointer pl-1 copy-button text-sm" title="Copy">&#10063;</span>).</div>
+            </li>
+            <li class="border border-slate-700 rounded flex">
+                <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">2. </div>
+                <div class="p-2">Each transfer counts as an entry, with the number being equal to the amount of BAN transferred (rounded to nearest whole number using bankers' rounding).</div>
+            </li>
+            <li class="border border-slate-700 rounded flex">
+                <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">3. </div>
+                <div class="p-2">At the end of each day (midnight UTC time), the game ends and a new one begins. The winning number is calculated based on all entries in the previous 24 hours.</div>
+            </li>
+            <li class="border border-slate-700 rounded flex">
+                <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">4. </div>
+                <div class="p-2">The winning address is that closest to the winning number. In the event of a tie, the winner is the first entry (by transaction timestamp, as per the ledger).</div>
+            </li>
+            <li class="border border-slate-700 rounded flex">
+                <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">5. </div>
+                <div class="p-2">The pot, equal to sum of all entries that day less a 1% cut, is transferred to the winning address within 24 hours of the game ending.</div>
+            </li>
+        </ol>
+        <div class="border border-slate-700 rounded">
+            <div onclick="showHideElement('example-details');" class="text-slate-100 bg-slate-700 p-2 font-semibold flex justify-between cursor-pointer">
+                <div>Example</div>
+                <button type="button">&#8628;</button>
+            </div>
+            <ol id="example-details" class="p-2 space-y-3 list-decimal px-8 hidden flex-col">
+                <li>Three monkeys, A, B and C enter with amounts 2, 4 and 9 BAN respectively.</li>
+                <li>The function for this day is simple: the arithmetic mean.</li>
+                <li>The winning number is: (2 + 4 + 9) / 3 = 5.</li>
+                <li>Monkey B is the winner! (2 + 4 + 9) x 99% BAN is transferred to the winning address.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="p-4 rounded border bg-slate-800 space-y-4">
+        <div class="border-b pb-2">
+            <h4 class="text-slate-100 text-2xl font-bold mb-1">FAQs</h4>
+            <div class="text-sm font-medium">Unanswered questions? Get in touch with u/openhamstercar99</div>
+        </div>
+        <ul class="space-y-4">
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq1');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>Who decides the function?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq1" class="p-2 hidden space-y-3 text-sm">This is at the creator's whim! If enough people play along, then this can be change to a poll.</div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq2');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>Can I enter multiple times?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq2" class="p-2 hidden space-y-3 text-sm">Yes, each transfer counts as a separate entry based on the transferred amount.</div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq3');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>How can I be sure the game is fair and transparent?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq3" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                    <div>Every transaction is recorded on the public ledger and the winning number is generated based on a predefined function.</div>
+                    <div>Each day, reddit user u/openhamstercar99 will post the next day's function as advance proof to be checked against. This way the true winner can be verified (based on the function and ledger history) and it can be seen that they received their winnings.</div>
+                    <div>For additional details on the nuts and bolts, see the <span onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">python script</span> which determines the winner each day.</div>
+                    <div>But as with all internet things, there is some reliance on trust. This is designed to be a fun daily game and you should not play with BAN you are not willing to lose.</div>
+                </div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq4');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>Is this vulnerable to manipulation?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq4" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                    <div>Probably. The rules are transparent though, including how the winner is determined each day (<span onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">see python script</span>), so everyone has the same information available to them.</div>
+                    <div>It is possible that a whale may try and swoop in at the last minute to manipulate the result. But whale beware! There is (almost) always a bigger whale.</div>
+                    <div>In addition, the timing of entries is based on the transaction's "local_timestamp". This is determined by the internal clock of the node verifying the transaction and could theoretically differ slightly from true UTC time. So if you try to 'time' the game, be careful!</div>
+                </div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq5');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>Any tips or tricks?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq5" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                    <div>This is inspired by <a href="https://en.wikipedia.org/wiki/Guess_2/3_of_the_average"><span class="underline hover:no-underline cursor-pointer">"Guess 2/3 of the average"</span></a>.</div>
+                    <div>Traditionally, players simultaneously pick numbers, and under this format, each function will have a dominant strategy and a nash equilibrium between 0 and infinity.</div>
+                    <div>Crypto transactions are public, so this game doesn't employ the simultaneous requirement.</div>
+                    <div>But, this itself introduces different nuances and considerations.</div>
+                </div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq6');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>What is Banano?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq6" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                    <div>Banano is a feeless, instant, rich in potassium cryptocurrency powered by directed acyclic graph (DAG) technology that aims to disrupt the meme economy. It was forked from Nano in 2018.</div>
+                    <div>For more information, visit <a href="https://banano.cc/"><span class="underline hover:no-underline cursor-pointer">banano.cc/</span></a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="p-4 rounded border bg-slate-800 space-y-4">
+        <div class="border-b pb-2">
+            <h4 class="text-slate-100 text-2xl font-bold mb-1">History</h4>
+            <div class="text-sm font-medium">View past results</div>
+        </div>
+
+        <div class="flex gap-x-4">
+            <input type="date" id="history-date" name="history-date" value="2024-11-08" min="2024-11-08" max="2024-11-20" class="text-slate-900 bg-slate-100 border border-slate-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" />
+            <button type="button" id="history-load-button" onclick="showHideElement('historical-results');" class="px-3 bg-slate-700 rounded font-medium hover:border-slate-900 hover:bg-slate-900 hover:text-slate-100">Load</button>
+        </div>
+        <div id="historical-loading" class="p-2 space-y-2 hidden text-sm">Loading...</div>
+        <div id="historical-result" class="space-y-4 hidden flex-wrap">
+            <div class="border border-slate-700 rounded w-full">
+                <div class="text-slate-100 bg-slate-700 p-2 font-semibold">Function</div>
+                <div class="p-2 space-y-2">
+                    <div id="historical-function-html">Function here</div>
+                    <div class="italic text-xs" id="historical-function-txt">Text description of function</div>
+                    <div class="p-2 bg-slate-900 rounded text-xs">
+                        <pre onclick="showHideElement('py-formula-hist');" class="cursor-pointer">View python formula <button type="button">&#8628;</button></pre>
+                        <div id="py-formula-hist" class="hidden space-y-2 pt-2 mt-2 border-t border-slate-700 flex-wrap">
+                            <pre class="w-full">def winning_number(entries):<br>&#9;"""<br>&#9;entries : list<br>&#9;&#9;Entry values, e.g. [1, 2, 3]<br>&#9;"""<br>&#9;<span id="historical-function-python">return sum(entries) / len(entries)</span></pre>
+                            <pre onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">View full script</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-slate-700 rounded w-full">
+                <div class="text-slate-100 bg-slate-700 p-2 font-semibold">Winning details</div>
+                <div class="p-2 space-y-2">
+                    <div><span class="text-sm font-semibold">Correct number:</span> <span id="historical-correct-number">XX</span></div>
+                    <div><span class="text-sm font-semibold">Winning address:</span> <span class="copy-object shorten-address" title="placeholder" id="historical-winning-address">placeholder</span> <span class="cursor-pointer pl-1 copy-button" title="Copy">&#10063;</span></div>
+                    <div><span class="text-sm font-semibold">Winning pot:</span> <span id="historical-winning-pot">placeholder</span> BAN</div>
+                </div>
+            </div>
+            <button type="button" onclick="showHideElement('code-script-container');" class="text-xs cursor-pointer underline hover:no-underline">Wish to confirm the result? See the deciding script</button>
+        </div>
+    </div>
+
+    <div id="copied-message" class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded transition-opacity duration-300 text-sm hidden">Copied!</div>
+</main>
+<footer class="w-full flex justify-around flex-wrap bg-slate-900 py-8 text-sm gap-y-6">
+    <div class="w-full flex justify-center gap-x-6 flex-wrap text-slate-100">
+        <a href="https://banano.cc/" target="_blank">
+            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 135"><path fill="#FBDD11" fill-rule="evenodd" d="M184.1 133.9C103.5 144 66.3 72.9 73 65.9c4.4-4.6 11.1-4.9 17-5 27-.8 65.1 30.8 72.9 30.6 15-.3 37.5-24.2 52.3-43.9 6.2-8.2 44.9-20.6 40.6 1-14 70.2-61.3 84-71.6 85.3ZM72 .9C152.5-9 189.7 62 183 69c-4.4 4.7-11.1 5-17 5-27 .8-65.1-30.8-72.9-30.6-15 .3-37.5 24.2-52.3 43.9-6.2 8.2-44.9 20.7-40.6-1C14.3 16 61.6 2.2 72 1Z"/></svg>
+        </a>
+        <a href="https://www.reddit.com/r/banano/" target="_blank">
+            <svg class="h-8 w-8" style="color:#FF4500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+        </a>
+        <a href="https://chat.banano.cc/" target="_blank">
+            <svg class="h-8 w-8" style="color:#5865F2;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+        </a>
+    </div>
+    <div class="w-full flex justify-around flex-wrap">
+        <a href="privacy-policy.html"><div class="underline hover:no-underline cursor-pointer">Privacy policy</div></a>
+        <a href="terms-and-conditions.html"><div class="underline hover:no-underline cursor-pointer">Terms and conditions</div></a>
+        <div class="max-w-72">This site has no affiliation with banano or any of the sites linked to.</div>
+    </div>
+</footer>
+<script>
+const api_path = "https://api.spyglass.pw/banano/";
+const ban_address = "ban_examplebanaddress";
+
+function insertBanAddresses(){
+    const banAddressSpans = document.querySelectorAll('.hot-address');
+
+    banAddressSpans.forEach(banAddressSpan => {
+        banAddressSpan.textContent = ban_address;
+        banAddressSpan.title = ban_address;
+    });
+};
+
+function showHideElement(elementId) {
+    let element = document.getElementById(elementId);
+
+    if (element) {
+        document.getElementById(elementId).classList.toggle("hidden");
+        document.getElementById(elementId).classList.toggle("flex");
+    };
+};
+
+function shortenBanAddressesForDisplay(){
+    const addresses = document.querySelectorAll('.shorten-address');
+
+    addresses.forEach(address => {
+        if (address.textContent.length > 12){
+            let addressText = address.textContent;
+            address.textContent = addressText.slice(0, 9) + '...' + addressText.slice(-3);
+        };
+    });
+};
+
+async function makeRequest(url, method = 'GET', data = null) {
+    const options = {
+        method,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+
+    if (data) {
+        options.body = JSON.stringify(data);
+    }
+
+    try {
+        const response = await fetch(url, options);
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+
+        const result = await response.json();
+
+        return result;
+    } catch (error) {
+        console.error("Request failed", error);
+        throw error;
+    }
+};
+
+function getBananoData(request_path, params = {}){
+    return makeRequest('https://api.spyglass.pw/banano/v2/account/confirmed-transactions',
+                       'POST',
+                       {address: ban_address, ...params});
+};
+
+function getConfirmedTransactions(){
+    getBananoData("v2/account/confirmed-transactions", {includeSend: false, size: 10})
+    .then(data => {
+        console.log(JSON.stringify(data, null, 2))
+        let entriesEl = document.getElementById("recent-entries");
+        entriesEl.innerHTML = '';
+        let transactions = data;
+        console.log(transactions.length);
+        var timestamp, date, date_str, year, month, day, hour, minutes, seconds;
+        for (let i = 0; i < transactions.length; i++){
+            console.log(i);
+            timestamp = transactions[i]['timestamp'];
+            date = new Date(Number(timestamp) * 1000);
+            year = date.getUTCFullYear();
+            month = date.getUTCMonth() + 1;
+            day = date.getUTCDate();
+            hour = date.getUTCHours();
+            minutes = date.getUTCMinutes();
+            seconds = date.getUTCSeconds();
+            date_str = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} UTC`;
+            console.log(date_str);
+        }
+    })
+    .catch(error => console.error(error));
+};
+
+
+// getConfirmedTransactions();
+
+function getRecentTransactionHtml(loopNumber, time, amount, address){
+    return `<div id="entry-${loopNumber}" class="p-2 border border-slate-700 rounded w-56">
+                    <div class="text-sm italic"><span id="entry-${loopNumber}-time">${time}</span></div>
+                    <div><span class="text-sm font-medium">Amount:</span> <span id="entry-${loopNumber}-amount">${amount}</span> BAN</div>
+                    <div class="whitespace-nowrap"><span class="text-sm font-medium">Address:</span> <span class="copy-object shorten-address" title="${address}"><span id="entry-${loopNumber}-address">${address}</span></span> <span class="cursor-pointer pl-1 copy-button" title="Copy">&#10063;</span></div>
+                </div>`
+};
+
+function updateRecentTransactions(){
+    // get confirmed transactions
+    getBananoData("v2/account/confirmed-transactions", {includeSend: false, size: 10})
+        .then(data => {
+            let entriesEl = document.getElementById("recent-entries");
+            entriesEl.innerHTML = '';
+            let transactions = data;
+            var timestamp, date, date_str, year, month, day, hour, minutes, seconds;
+            for (let i = 0; i < transactions.length; i++){
+                timestamp = transactions[i]['timestamp'];
+                date = new Date(Number(timestamp) * 1000);
+                year = date.getUTCFullYear();
+                month = date.getUTCMonth() + 1;
+                day = date.getUTCDate();
+                hour = date.getUTCHours();
+                minutes = date.getUTCMinutes();
+                seconds = date.getUTCSeconds();
+                date_str = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} UTC`;
+                entriesEl.innerHTML += getRecentTransactionHtml(i+1,
+                                                                   date_str,
+                                                                   transactions[i]['amount'],
+                                                                   transactions[i]['address']);
+            };
+            document.getElementById("recent-entries-updated-on").textContent = "Updated " + getTodayDatetime() + " UTC";
+            shortenBanAddressesForDisplay();
+            document.getElementById("entries-container").classList.remove("hidden");
+            document.getElementById("entries-container").classList.add("flex");
+        })
+        .catch(error => console.error(error));
+};
+
+function getTodayDate(){
+    const today = new Date();
+    const year = today.getUTCFullYear();
+    const month = today.getUTCMonth() + 1; // Months are zero-based in JavaScript, so add 1
+    const day = today.getUTCDate();
+    return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+};
+
+function getTodayDatetime(){
+    const today = new Date();
+    const year = today.getUTCFullYear();
+    const month = today.getUTCMonth() + 1; // Months are zero-based in JavaScript, so add 1
+    const day = today.getUTCDate();
+    const hour = today.getUTCHours();
+    const minutes = today.getUTCMinutes();
+    const seconds = today.getUTCSeconds();
+    return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+};
+
+function listenForCopyButtons(){
+    // Select all copy buttons
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    // Add a click event listener to each button
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Get the previous sibling element
+            const previousElement = button.previousElementSibling;
+
+            // Check if the previous element has the class "copy-object"
+            if (previousElement && previousElement.classList.contains('copy-object')) {
+                // Copy the title content to the clipboard
+                navigator.clipboard.writeText(previousElement.title)
+                .then(() => {
+                    console.log('Text copied to clipboard:', previousElement.title);
+                    document.getElementById('copied-message').classList.toggle("hidden");
+                    setTimeout(() => {
+                        document.getElementById('copied-message').classList.toggle("hidden");
+                    }, 2000);
+                })
+                .catch(error => {
+                    console.error('Failed to copy text:', error);
+                });
+            } else {
+                console.log('No preceding copy-object found for this button.');
+            }
+        });
+    });
+};
+
+
+function loadTodayFunction(){
+    const url = 'functions.json';
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            let date = getTodayDate();
+            if (date in data){
+                let todayFunctionInfo = data[date];
+                document.getElementById("today-function-html").innerHTML = todayFunctionInfo["function_html"];
+                document.getElementById("today-function-txt").innerHTML = todayFunctionInfo["function_txt"];
+                document.getElementById("today-function-python").innerHTML = todayFunctionInfo["function_python"];
+
+                document.getElementById("today-function-loading").classList.remove("flex");
+                document.getElementById("today-function-loading").classList.add("hidden");
+                document.getElementById("today-function-container").classList.remove("hidden");
+            } else {
+                document.getElementById("today-function-loading").innerHTML = "Something's gone wrong! Could not load";
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+};
+
+function loadHistoricalResults(){
+    const date = document.getElementById("history-date").value;
+    console.log(date);
+
+    // show loading div
+    document.getElementById("historical-loading").classList.add("flex");
+    document.getElementById("historical-loading").classList.remove("hidden");
+    document.getElementById("historical-result").classList.add("hidden");
+
+    // get historical data for that day
+    const url = 'banano-history.json';
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (date in data){
+                let info = data[date];
+
+                document.getElementById("historical-function-html").innerHTML = info["function_html"];
+                document.getElementById("historical-function-txt").innerHTML = info["function_txt"];
+                document.getElementById("historical-function-python").innerHTML = info["function_python"];
+                document.getElementById("historical-correct-number").innerHTML = info["winning_number"];
+                document.getElementById("historical-winning-address").innerHTML = info["winner_address"];
+                document.getElementById("historical-winning-address").title = info["winner_address"];
+                document.getElementById("historical-winning-pot").innerHTML = info["winner_pot"];
+
+                shortenBanAddressesForDisplay();
+
+                document.getElementById("historical-loading").classList.remove("flex");
+                document.getElementById("historical-loading").classList.add("hidden");
+                document.getElementById("historical-result").classList.remove("hidden");
+            } else {
+                document.getElementById("historical-loading").innerHTML = "Something's gone wrong! Could not load";
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+};
+
+function updateTodayDatetimeWindow(){
+    let todayDate = getTodayDate();
+    document.getElementById('today-datetime-window-start').textContent = todayDate + ' 00:00:00 UTC';
+    document.getElementById('today-datetime-window-end').textContent = todayDate + ' 23:59:59 UTC';
+    document.getElementById('today-datetime-window-end-counter-txt').textContent = todayDate + ' 23:59:59 UTC';
+};
+
+function updateCountdown() {
+    // Get the current time in UTC
+    const now = new Date();
+    const nowUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+    // Calculate midnight UTC for the next day
+    const nextMidnightUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+
+    // Calculate the difference in milliseconds
+    const timeRemaining = nextMidnightUTC - nowUTC;
+
+    // Convert milliseconds to hours, minutes, and seconds
+    const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+    // Display the countdown
+    document.getElementById("game-end-countdown").textContent = `${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+
+    // Stop the countdown at midnight
+    if (timeRemaining <= 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("game-end-countdown").textContent = "There was an error";
+    }
+};
+
+// Update the countdown every second
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+// Initial call to display immediately on load
+updateCountdown();
+insertBanAddresses();
+updateTodayDatetimeWindow();
+listenForCopyButtons();
+loadTodayFunction();
+shortenBanAddressesForDisplay();
+document.getElementById('history-load-button').addEventListener('click', loadHistoricalResults);
+document.getElementById('history-date').addEventListener('keydown', function(event) { if (event.key === "Enter") { loadHistoricalResults() } });
+</script>
+
+<div id="code-script-container" class="py-6 px-3 bg-slate-900 fixed w-full h-full hidden justify-center flex-wrap">
+    <div class="w-full h-full bg-slate-900 flex justify-center flex-col flex-nowrap space-y-6 py-12 max-w-screen-sm">
+        <div class="space-y-2 border-b pb-3">
+            <div class="flex justify-between">
+                <div class="text-slate-100 text-3xl font-semibold">Script</div>
+                <button type="button" onclick="showHideElement('code-script-container');" class="text-4xl cursor-pointer">&times;</button>
+            </div>
+            <div>This is the python script used to decide the winner each day</div>
+        </div>
+        <div class="p-3 overflow-y-scroll text-sm">
+            <pre>
+"""
+This python script can be used to verify the winner for a given day.
+"""
+
+import requests
+import json
+from typing import Union
+from datetime import datetime, timedelta, time
+import pytz
+
+import bananopie
+
+tolerance = 0.001
+
+def get_functions():
+    url = "/functions.json"
+    response = requests.get(url)
+    if response.status_code != 200:  # not successful
+        return None
+
+    return response.json()
+
+
+def get_current_datetime_utc():
+    return pytz.utc.localize(datetime.combine(datetime.now(pytz.utc), time(0, 0, 0)))  # earliest time today
+
+
+def transactions_by_date(target_date: Union[datetime, str]):
+    if isinstance(target_date, str):
+        start_date = datetime.strptime(target_date, "%Y-%m-%d")
+    elif isinstance(target_date, datetime):
+        start_date = target_date
+    else:
+        return list()
+
+    if start_date.tzinfo is None:  # not timezone aware
+        start_date = pytz.utc.localize(start_date)
+
+    end_date = start_date + timedelta(days=1)
+    start_timestamp = int(start_date.timestamp())
+    end_timestamp = int(end_date.timestamp())
+
+    filtered_transactions = list()
+    head = None
+    while True:
+        # Get account history, using head if available
+        transactions = rpc.get_account_history("add_game_address_here",
+                                               count=100, head=head)["history"]
+        if not transactions:
+            break  # Exit if no transactions returned (end of history)
+
+        for receipt in transactions:
+            timestamp = int(receipt.get("local_timestamp", 0))
+            if start_timestamp <= timestamp < end_timestamp:
+                filtered_transactions.append(receipt)
+            elif timestamp < start_timestamp:
+                return filtered_transactions  # Stop if we've gone past the date
+
+        # Update head to the last transaction hash for the next batch
+        head = transactions[-1]["hash"]
+
+    return filtered_transactions
+
+
+def sort_transactions_by_timestamp(transactions, asc=True, key="local_timestamp"):
+    return sorted(transactions, key=lambda x: x[key], reverse=not asc)
+
+
+def confirmed_receipts_by_date(target_date: Union[datetime, str], asc_timestamps=True):
+    # set asc_timestamps to None if do not wish to sort
+    transactions = transactions_by_date(target_date)
+    receipts = [tx for tx in transactions if tx["confirmed"] == "true" and tx["type"] == "receive"]
+
+    if asc_timestamps is True or asc_timestamps is False:
+        receipts = sort_transactions_by_timestamp(receipts, asc_timestamps)
+
+    return receipts
+
+
+def confirmed_payments_by_date(target_date: Union[datetime, str], asc_timestamps=True):
+    # set asc_timestamps to None if do not wish to sort
+    transactions = transactions_by_date(target_date)
+    payments = [tx for tx in transactions if tx["confirmed"] == "true" and tx["type"] == "send"]
+
+    if asc_timestamps is True or asc_timestamps is False:
+        payments = sort_transactions_by_timestamp(payments, asc_timestamps)
+
+    return payments
+
+
+def get_winning_number(entries: list[float], target_date: datetime):
+    """This changes each day, based on deciding function for that day. This example is for the arithmetic mean."""
+    winning_number = sum(entries) / len(entries)
+
+    return winning_number
+
+
+def decide_winner_and_distribute_winnings(target_date: datetime):
+    receipts = confirmed_receipts_by_date(target_date, asc_timestamps=True)
+    if not len(receipts):  # no entries that day, so no award
+        print("No entries, so skip")
+        return dict()
+
+    # decide winning number, round to nearest whole number to reduce last minute abuse
+    entries = [round(float(bananopie.raw_to_whole(tx.get("amount", 0), 4))) for tx in receipts]
+    print(f"No. entries: {len(entries)}")
+
+    winning_number = get_winning_number(entries, target_date)
+    if winning_number is None:
+        print(f"Winning number could not be determined for {target_date.strftime('%Y-%m-%d')}")
+        return dict()
+
+    # decide winning entry
+    closenesses = [abs(winning_number - num) for num in entries]
+    winning_tx = receipts[closenesses.index(min(closenesses))]  # if multiple winners, awards to first entry
+    winning_address = winning_tx["account"]  # if multiple winners, award to first entry
+    print(f"Winning address: {winning_address}")
+
+    total_pot = sum(entries)
+    print(f"Total pot: {total_pot}")
+
+    winner_pot = total_pot * (1 - house_cut)
+    house_pot = total_pot - winner_pot
+            </pre>
+        </div>
+        <div class="pt-3 pb-1 text-xs">
+            Identified any issues with the code? Impossible! This code has been verified by top-notch AI. Just kidding... get in touch at u/openhamstercar99.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
