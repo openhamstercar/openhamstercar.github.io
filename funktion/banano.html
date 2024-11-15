@@ -284,7 +284,7 @@
 </footer>
 <script>
 const api_path = "https://api.spyglass.pw/banano/";
-const ban_address = "ban_examplebanaddress";
+let ban_address;
 
 function insertBanAddresses(){
     const banAddressSpans = document.querySelectorAll('.hot-address');
@@ -348,35 +348,6 @@ function getBananoData(request_path, params = {}){
                        'POST',
                        {address: ban_address, ...params});
 };
-
-function getConfirmedTransactions(){
-    getBananoData("v2/account/confirmed-transactions", {includeSend: false, size: 10})
-    .then(data => {
-        console.log(JSON.stringify(data, null, 2))
-        let entriesEl = document.getElementById("recent-entries");
-        entriesEl.innerHTML = '';
-        let transactions = data;
-        console.log(transactions.length);
-        var timestamp, date, date_str, year, month, day, hour, minutes, seconds;
-        for (let i = 0; i < transactions.length; i++){
-            console.log(i);
-            timestamp = transactions[i]['timestamp'];
-            date = new Date(Number(timestamp) * 1000);
-            year = date.getUTCFullYear();
-            month = date.getUTCMonth() + 1;
-            day = date.getUTCDate();
-            hour = date.getUTCHours();
-            minutes = date.getUTCMinutes();
-            seconds = date.getUTCSeconds();
-            date_str = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} UTC`;
-            console.log(date_str);
-        }
-    })
-    .catch(error => console.error(error));
-};
-
-
-// getConfirmedTransactions();
 
 function getRecentTransactionHtml(loopNumber, time, amount, address){
     return `<div id="entry-${loopNumber}" class="p-2 border border-slate-700 rounded w-56">
@@ -466,7 +437,6 @@ function listenForCopyButtons(){
         });
     });
 };
-
 
 function loadTodayFunction(){
     const url = 'functions.json';
@@ -577,16 +547,22 @@ function updateCountdown() {
 
 // Update the countdown every second
 const countdownInterval = setInterval(updateCountdown, 1000);
-
-// Initial call to display immediately on load
 updateCountdown();
-insertBanAddresses();
 updateTodayDatetimeWindow();
 listenForCopyButtons();
 loadTodayFunction();
 shortenBanAddressesForDisplay();
 document.getElementById('history-load-button').addEventListener('click', loadHistoricalResults);
 document.getElementById('history-date').addEventListener('keydown', function(event) { if (event.key === "Enter") { loadHistoricalResults() } });
+
+// Functions requiring config data
+makeRequest("/config.json")
+    .then(data => {
+        ban_address = data["funktion-banano-hot-wallet"];
+        insertBanAddresses();
+        shortenBanAddressesForDisplay();
+    })
+    .catch(error => console.error(error));
 </script>
 
 <div id="code-script-container" class="py-6 px-3 bg-slate-900 fixed w-full h-full hidden justify-center flex-wrap">
