@@ -1,22 +1,30 @@
 {
-  "2024-11-18": {
+  "monday": {
     "function_txt":  "Half the arithmetic mean (THIS IS A TEST EXAMPLE)",
     "function_html":  "y = mean(entries) / 2",
     "function_python":  "(sum(entries) / len(entries)) / 2"},
-  "2024-11-19": {
+  "tuesday": {
     "function_txt":  "Two thirds of the arithmetic mean (THIS IS A TEST EXAMPLE)",
     "function_html":  "y = mean(entries) * 2 / 3",
     "function_python":  "(sum(entries) / len(entries)) * 2 / 3"},
-  "2024-11-20": {
+  "wednesday": {
     "function_txt":  "Double the arithmetic mean (THIS IS A TEST EXAMPLE)",
     "function_html":  "y = mean(entries) * 2",
     "function_python":  "(sum(entries) / len(entries)) * 2"},
-  "2024-11-21": {
+  "thursday": {
     "function_txt":  "Median (THIS IS A TEST EXAMPLE)",
     "function_html":  "y = median(entries)",
     "function_python":  "statistics.median(entries)"},
-  "2024-11-22": {
+  "friday": {
     "function_txt":  "Two thirds of the median (THIS IS A TEST EXAMPLE)",
     "function_html":  "y = median(entries) * 2 / 3",
-    "function_python":  "statistics.median(entries) * 2 / 3"}
+    "function_python":  "statistics.median(entries) * 2 / 3"},
+  "saturday": {
+    "function_txt":  "Square of the median (THIS IS A TEST EXAMPLE)",
+    "function_html":  "y = median(entries) ^ 2",
+    "function_python":  "statistics.median(entries) ** 2"},
+  "sunday": {
+    "function_txt":  "Two thirds of the arithmetic mean (THIS IS A TEST EXAMPLE)",
+    "function_html":  "y = mean(entries) ^ 2",
+    "function_python":  "(sum(entries) / len(entries)) ** 2"}
 }
