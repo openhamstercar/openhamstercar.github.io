@@ -283,6 +283,7 @@
     </div>
 </footer>
 <script>
+const days_key = {0: "monday", 1: "tuesday", 2: "wednesday", 3: "thursday", 4: "friday", 5: "saturday", 6: "sunday"};
 const api_path = "https://api.spyglass.pw/banano/";
 let ban_address;
 
@@ -449,9 +450,9 @@ function loadTodayFunction(){
             return response.json();
         })
         .then(data => {
-            let date = getTodayDate();
-            if (date in data){
-                let todayFunctionInfo = data[date];
+            let day = days_key[getTodayDate().getDay()];
+            if (day in data){
+                let todayFunctionInfo = data[day];
                 document.getElementById("today-function-html").innerHTML = todayFunctionInfo["function_html"];
                 document.getElementById("today-function-txt").innerHTML = todayFunctionInfo["function_txt"];
                 document.getElementById("today-function-python").innerHTML = todayFunctionInfo["function_python"];
@@ -470,7 +471,6 @@ function loadTodayFunction(){
 
 function loadHistoricalResults(){
     const date = document.getElementById("history-date").value;
-    console.log(date);
 
     // show loading div
     document.getElementById("historical-loading").classList.add("flex");
@@ -589,14 +589,6 @@ import pytz
 import bananopie
 
 tolerance = 0.001
-
-def get_functions():
-    url = "/funktion/functions.json"
-    response = requests.get(url)
-    if response.status_code != 200:  # not successful
-        return None
-
-    return response.json()
 
 
 def get_current_datetime_utc():
