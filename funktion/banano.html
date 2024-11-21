@@ -139,7 +139,7 @@
             </li>
             <li class="border border-slate-700 rounded flex">
                 <div class="text-slate-100 p-2 w-8 shrink-0 bg-slate-700 text-center font-semibold">5. </div>
-                <div class="p-2">The pot, equal to sum of all entries that day less a 1% cut, is transferred to the winning address within 24 hours of the game ending.</div>
+                <div class="p-2">The pot, equal to sum of all entries that day less a 1% cut, is transferred to the winning address..</div>
             </li>
         </ol>
         <div class="border border-slate-700 rounded">
@@ -167,7 +167,7 @@
                     <div>Who decides the function?</div>
                     <button type="button">&#8628;</button>
                 </div>
-                <div id="faq1" class="p-2 hidden space-y-3 text-sm">This is at the creator's whim! If enough people play along, then this can be change to a poll.</div>
+                <div id="faq1" class="p-2 hidden space-y-3 text-sm">This is at the creator's whim! If enough people play along, then this can be changed to a poll.</div>
             </li>
             <li class="border border-slate-700 rounded">
                 <div onclick="showHideElement('faq2');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
@@ -178,33 +178,44 @@
             </li>
             <li class="border border-slate-700 rounded">
                 <div onclick="showHideElement('faq3');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
-                    <div>How can I be sure the game is fair and transparent?</div>
+                    <div>I won! When should I receive my winnings?</div>
                     <button type="button">&#8628;</button>
                 </div>
                 <div id="faq3" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                    <div>The winnings should be transferred within 24 hours of the game ending (UTC midnight each day). However, currently this is not automated (all aspects of the game aside from running the script which determines the winner and distributes the winnings are client side), so the timing may vary or there may be a delay.</div>
+                    <div>If enough people start playing, this can definitely be automated going forward!</div>
+                    <div>Regardless, if there are any issues, please get in touch with u/openhamstercar99.</div>
+                </div>
+            </li>
+            <li class="border border-slate-700 rounded">
+                <div onclick="showHideElement('faq4');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                    <div>How can I be sure the game is fair and transparent?</div>
+                    <button type="button">&#8628;</button>
+                </div>
+                <div id="faq4" class="p-2 hidden space-y-3 flex-wrap text-sm">
                     <div>Every transaction is recorded on the public ledger and the winning number is generated based on a predefined function.</div>
-                    <div>Each day, reddit user u/openhamstercar99 will post the next day's function as advance proof to be checked against. This way the true winner can be verified (based on the function and ledger history) and it can be seen that they received their winnings.</div>
+                    <div>The function is based on the day of the week (e.g. it is the same every Monday), and this can be confirmed by viewing the commit history of openhamstercar. This way the true winner can be historically verified (based on the function and ledger history) and it can be seen that they received their winnings.</div>
                     <div>For additional details on the nuts and bolts, see the <span onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">python script</span> which determines the winner each day.</div>
                     <div>But as with all internet things, there is some reliance on trust. This is designed to be a fun daily game and you should not play with BAN you are not willing to lose.</div>
                 </div>
             </li>
             <li class="border border-slate-700 rounded">
-                <div onclick="showHideElement('faq4');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                <div onclick="showHideElement('faq5');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
                     <div>Is this vulnerable to manipulation?</div>
                     <button type="button">&#8628;</button>
                 </div>
-                <div id="faq4" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                <div id="faq5" class="p-2 hidden space-y-3 flex-wrap text-sm">
                     <div>Probably. The rules are transparent though, including how the winner is determined each day (<span onclick="showHideElement('code-script-container');" class="w-full underline hover:no-underline cursor-pointer">see python script</span>), so everyone has the same information available to them.</div>
                     <div>It is possible that a whale may try and swoop in at the last minute to manipulate the result. But whale beware! There is (almost) always a bigger whale.</div>
                     <div>In addition, the timing of entries is based on the transaction's "local_timestamp". This is determined by the internal clock of the node verifying the transaction and could theoretically differ slightly from true UTC time. So if you try to 'time' the game, be careful!</div>
                 </div>
             </li>
             <li class="border border-slate-700 rounded">
-                <div onclick="showHideElement('faq5');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                <div onclick="showHideElement('faq6');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
                     <div>Any tips or tricks?</div>
                     <button type="button">&#8628;</button>
                 </div>
-                <div id="faq5" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                <div id="faq6" class="p-2 hidden space-y-3 flex-wrap text-sm">
                     <div>This is inspired by <a href="https://en.wikipedia.org/wiki/Guess_2/3_of_the_average"><span class="underline hover:no-underline cursor-pointer">"Guess 2/3 of the average"</span></a>.</div>
                     <div>Traditionally, players simultaneously pick numbers, and under this format, each function will have a dominant strategy and a nash equilibrium between 0 and infinity.</div>
                     <div>Crypto transactions are public, so this game doesn't employ the simultaneous requirement.</div>
@@ -212,11 +223,11 @@
                 </div>
             </li>
             <li class="border border-slate-700 rounded">
-                <div onclick="showHideElement('faq6');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
+                <div onclick="showHideElement('faq7');" class="text-slate-100 bg-slate-700 p-2 font-medium flex justify-between cursor-pointer">
                     <div>What is Banano?</div>
                     <button type="button">&#8628;</button>
                 </div>
-                <div id="faq6" class="p-2 hidden space-y-3 flex-wrap text-sm">
+                <div id="faq7" class="p-2 hidden space-y-3 flex-wrap text-sm">
                     <div>Banano is a feeless, instant, rich in potassium cryptocurrency powered by directed acyclic graph (DAG) technology that aims to disrupt the meme economy. It was forked from Nano in 2018.</div>
                     <div>For more information, visit <a href="https://banano.cc/"><span class="underline hover:no-underline cursor-pointer">banano.cc/</span></a></div>
                 </div>
@@ -408,6 +419,16 @@ function getTodayDatetime(){
     return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 };
 
+function getNowUTCTimestamp(){
+    const now = new Date();
+    return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+};
+
+function getNowUTCDatetime(){
+    const now = new Date();
+    return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()));
+};
+
 function listenForCopyButtons(){
     // Select all copy buttons
     const copyButtons = document.querySelectorAll('.copy-button');
@@ -450,7 +471,9 @@ function loadTodayFunction(){
             return response.json();
         })
         .then(data => {
-            let day = days_key[getTodayDate().getDay()];
+            let nowUTC = getNowUTCDatetime();
+            let dayNum = nowUTC.getDay();
+            let day = days_key[dayNum];
             if (day in data){
                 let todayFunctionInfo = data[day];
                 document.getElementById("today-function-html").innerHTML = todayFunctionInfo["function_html"];
@@ -522,13 +545,13 @@ function updateTodayDatetimeWindow(){
 function updateCountdown() {
     // Get the current time in UTC
     const now = new Date();
-    const nowUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+    const nowUTCTimestamp = getNowUTCTimestamp();
 
     // Calculate midnight UTC for the next day
     const nextMidnightUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
 
     // Calculate the difference in milliseconds
-    const timeRemaining = nextMidnightUTC - nowUTC;
+    const timeRemaining = nextMidnightUTC - nowUTCTimestamp;
 
     // Convert milliseconds to hours, minutes, and seconds
     const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
